@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Pets | 2099</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="neon-ring"></div>
+            <div class="neon-ring ring-inner"></div>
+            <h1>SYSTEM LOADING</h1>
+            <div class="cyber-loading-bar">
+                <div class="cyber-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mouse Trail Canvas -->
+    <canvas id="trailCanvas"></canvas>
+    
+    <!-- Background Particles -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- Glassmorphism Navbar -->
+    <nav class="glass-navbar">
+        <div class="logo">
+            <i class="fa-solid fa-dog glowing-icon"></i>
+            <span>STELLAR PETS</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#features">Features</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button id="themeToggle" title="Toggle Mode"><i class="fa-solid fa-moon"></i></button>
+            <button id="soundToggle" title="Toggle Sound"><i class="fa-solid fa-volume-high"></i></button>
+            <button id="cartIcon" class="glow-hover" title="View Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cartCount">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Welcome to the Future of Pet Shopping">Welcome to the Future <br><span class="neon-text">of Pet Shopping</span></h1>
+            <p>Experience zero-gravity companionship and state-of-the-art quantum accessories.</p>
+            <button class="btn-neon action-shop" onclick="document.getElementById('shop').scrollIntoView();">Initiate Shopping Sequence</button>
+        </div>
+        
+        <div class="hero-3d-cards">
+            <!-- 3D Anti Gravity Cards -->
+            <div class="float-card tilt-card" style="--d: 0s">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=400&auto=format&fit=crop" alt="Cyber Dog">
+                <div class="card-overlay">
+                    <h3>CYBER CANINES</h3>
+                </div>
+            </div>
+            <div class="float-card tilt-card" style="--d: 1s">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=400&auto=format&fit=crop" alt="Quantum Feline">
+                <div class="card-overlay">
+                    <h3>QUANTUM FELINES</h3>
+                </div>
+            </div>
+            <div class="float-card tilt-card" style="--d: 2s">
+                <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=400&auto=format&fit=crop" alt="Holographic Avian">
+                <div class="card-overlay">
+                    <h3>HOLOGRAPHIC AVIANS</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories-section">
+        <h2 class="section-title">PET <span>MATRIX</span></h2>
+        <div class="categories-grid">
+            <div class="category-btn glow-hover pulse-anim">
+                <i class="fa-solid fa-shield-dog"></i>
+                <span>Dogs</span>
+            </div>
+            <div class="category-btn glow-hover pulse-anim" style="animation-delay: 0.2s;">
+                <i class="fa-solid fa-cat"></i>
+                <span>Cats</span>
+            </div>
+            <div class="category-btn glow-hover pulse-anim" style="animation-delay: 0.4s;">
+                <i class="fa-solid fa-dove"></i>
+                <span>Birds</span>
+            </div>
+            <div class="category-btn glow-hover pulse-anim" style="animation-delay: 0.6s;">
+                <i class="fa-solid fa-fish"></i>
+                <span>Aquarium</span>
+            </div>
+            <div class="category-btn glow-hover pulse-anim" style="animation-delay: 0.8s;">
+                <i class="fa-solid fa-microchip"></i>
+                <span>Implants</span>
+            </div>
+            <div class="category-btn glow-hover pulse-anim" style="animation-delay: 1s;">
+                <i class="fa-solid fa-bowl-food"></i>
+                <span>Synth-Food</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section id="shop" class="shop-section">
+        <h2 class="section-title">QUANTUM <span>INVENTORY</span></h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card glass-panel tilt-card">
+                <div class="card-glow-bg"></div>
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=400&auto=format&fit=crop" alt="Smart Pet Collar" class="float-img">
+                <div class="product-info">
+                    <h3>Smart Pet Collar v2.0</h3>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <div class="price">250.00 Credits</div>
+                    <button class="btn-sm-neon add-to-cart" data-id="1" data-name="Smart Pet Collar v2.0" data-price="250">
+                        Add to Cart <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card glass-panel tilt-card">
+                <div class="card-glow-bg"></div>
+                <img src="https://plus.unsplash.com/premium_photo-1663127043867-2708302061de?q=80&w=400&auto=format&fit=crop" alt="Space Cat Bed" class="float-img">
+                <div class="product-info">
+                    <h3>Anti-Gravity Cat Bed</h3>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="price">499.00 Credits</div>
+                    <button class="btn-sm-neon add-to-cart" data-id="2" data-name="Anti-Gravity Cat Bed" data-price="499">
+                         Add to Cart <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card glass-panel tilt-card">
+                <div class="card-glow-bg"></div>
+                <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?q=80&w=400&auto=format&fit=crop" alt="AI Pet Feeder" class="float-img">
+                <div class="product-info">
+                    <h3>AI Predict-Feeder</h3>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                    <div class="price">120.00 Credits</div>
+                    <button class="btn-sm-neon add-to-cart" data-id="3" data-name="AI Predict-Feeder" data-price="120">
+                         Add to Cart <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card glass-panel tilt-card">
+                <div class="card-glow-bg"></div>
+                <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=400&auto=format&fit=crop" alt="Holographic Fish Tank" class="float-img">
+                <div class="product-info">
+                    <h3>Holo-Aquarium Sub</h3>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="price">899.00 Credits</div>
+                    <button class="btn-sm-neon add-to-cart" data-id="4" data-name="Holo-Aquarium Sub" data-price="899">
+                         Add to Cart <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-card glass-panel tilt-card">
+                <div class="card-glow-bg"></div>
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=400&auto=format&fit=crop" alt="Cyberpunk Dog Jacket" class="float-img">
+                <div class="product-info">
+                    <h3>Thermal Cyber Jacket</h3>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <div class="price">350.00 Credits</div>
+                    <button class="btn-sm-neon add-to-cart" data-id="5" data-name="Thermal Cyber Jacket" data-price="350">
+                         Add to Cart <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+             <!-- Product 6 -->
+             <div class="product-card glass-panel tilt-card">
+                <div class="card-glow-bg"></div>
+                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=400&auto=format&fit=crop" alt="Hover Carrier" class="float-img">
+                <div class="product-info">
+                    <h3>Maglev Pet Carrier</h3>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="price">550.00 Credits</div>
+                    <button class="btn-sm-neon add-to-cart" data-id="6" data-name="Maglev Pet Carrier" data-price="550">
+                         Add to Cart <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2 class="section-title">CORE <span>SYSTEMS</span></h2>
+        <div class="features-grid">
+            <div class="feature-card glass-panel">
+                <i class="fa-solid fa-rocket feature-icon"></i>
+                <h3>Intergalactic Delivery</h3>
+                <p>Near-lightspeed shipping via quantum tunnels direct to your pod.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <i class="fa-solid fa-brain feature-icon"></i>
+                <h3>AI Recommendations</h3>
+                <p>Neurolink analysis determines the perfect companion for your aura.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <i class="fa-solid fa-lock feature-icon"></i>
+                <h3>Quantum Secure</h3>
+                <p>Payments entangled and verified across 14 parallel dimensions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="cyber-footer">
+        <div class="footer-grid">
+            <div class="brand">
+                <h2>STELLAR PETS</h2>
+                <p>Elevating pet companionship beyond the atmosphere since 2099.</p>
+                <div class="socials">
+                    <a href="#" class="glow-hover"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="glow-hover"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="glow-hover"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="links">
+                <h3>Transmission Links</h3>
+                <ul>
+                    <li><a href="#">Support Hub</a></li>
+                    <li><a href="#">Wormhole Returns</a></li>
+                    <li><a href="#">Quantum Privacy</a></li>
+                </ul>
+            </div>
+            <div class="newsletter">
+                <h3>Comms Link</h3>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter Neuromail Address..." required>
+                    <button type="submit" class="btn-sm-neon"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2099 Stellar Pets Corp. All dimensions reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar glass-sidebar">
+        <div class="cart-header">
+            <h2>SHOPPING MATRIX</h2>
+            <button id="closeCart" class="glow-hover"><i class="fa-solid fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="total">Sys Total: <span id="cartTotal">0.00</span> C</div>
+            <button class="btn-neon checkout-btn">Initialize Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Cart Overlay -->
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <!-- AI Chatbot Button -->
+    <button id="aiChatBtn" class="ai-chat glow-hover pulse-anim" title="Summon AI Assist">
+        <i class="fa-solid fa-robot"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
